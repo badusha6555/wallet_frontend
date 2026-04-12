@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  // Color Palette — deep navy + electric mint accent
   static const Color primary = Color(0xFF0A0E1A);
   static const Color surface = Color(0xFF111827);
   static const Color card = Color(0xFF1A2235);

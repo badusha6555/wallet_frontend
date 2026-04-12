@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import '../../controllers/wallet_provider.dart';
 import '../../core/theme/app_theme.dart';
-import '../../models/models.dart';
+import '../../core/utils/details_row.dart';
+import '../../core/utils/status_badge.dart';
+import '../../models/transcation_model.dart';
 
 class TransactionHistoryScreen extends StatefulWidget {
   const TransactionHistoryScreen({super.key});
@@ -196,7 +198,7 @@ class _TxnDetailTile extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 4),
-                    _StatusBadge(status: txn.status, success: txn.isSuccess),
+                    StatusBadge(status: txn.status, success: txn.isSuccess),
                   ],
                 ),
               ],
@@ -233,15 +235,14 @@ class _TxnDetailTile extends StatelessWidget {
             const Text('Transaction Details',
                 style: TextStyle(
                     color: AppTheme.textPrimary, fontSize: 18, fontWeight: FontWeight.w700)),
-            const SizedBox(height: 24),
-            _DetailRow('Amount', 'SAR ${fmt.format(txn.amount)}'),
-            _DetailRow('Type', txn.type),
-            _DetailRow('Status', txn.status),
-            _DetailRow('From', txn.senderWallet.isNotEmpty ? txn.senderWallet : '—'),
-            _DetailRow('To', txn.receiverWallet.isNotEmpty ? txn.receiverWallet : '—'),
-            _DetailRow(
+            const SizedBox(height: 24), DetailRow('Amount', 'SAR ${fmt.format(txn.amount)}'),
+            DetailRow('Type', txn.type),
+            DetailRow('Status', txn.status),
+            DetailRow('From', txn.senderWallet.isNotEmpty ? txn.senderWallet : '—'),
+            DetailRow('To', txn.receiverWallet.isNotEmpty ? txn.receiverWallet : '—'),
+            DetailRow(
                 'Date', txn.createdAt != null ? dateFmt.format(txn.createdAt!) : '—'),
-            _DetailRow('Ref ID', txn.id.substring(0, 8).toUpperCase()),
+            DetailRow('Ref ID', txn.id.substring(0, 8).toUpperCase()),
             const SizedBox(height: 8),
           ],
         ),
@@ -250,49 +251,5 @@ class _TxnDetailTile extends StatelessWidget {
   }
 }
 
-class _DetailRow extends StatelessWidget {
-  final String label;
-  final String value;
-  const _DetailRow(this.label, this.value);
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Row(
-        children: [
-          Text(label, style: const TextStyle(color: AppTheme.textMuted, fontSize: 13)),
-          const Spacer(),
-          Text(value,
-              style: const TextStyle(
-                  color: AppTheme.textPrimary, fontSize: 13, fontWeight: FontWeight.w600)),
-        ],
-      ),
-    );
-  }
-}
 
-class _StatusBadge extends StatelessWidget {
-  final String status;
-  final bool success;
-  const _StatusBadge({required this.status, required this.success});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-      decoration: BoxDecoration(
-        color: (success ? AppTheme.success : AppTheme.danger).withOpacity(0.12),
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: Text(
-        status,
-        style: TextStyle(
-          color: success ? AppTheme.success : AppTheme.danger,
-          fontSize: 10,
-          fontWeight: FontWeight.w700,
-        ),
-      ),
-    );
-  }
-}

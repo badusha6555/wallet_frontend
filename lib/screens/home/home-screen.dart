@@ -5,7 +5,9 @@ import '../../controllers/profile_controller.dart';
 import '../../controllers/wallet_provider.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/common_widgets.dart';
-import '../../models/models.dart';
+import '../../models/transcation_model.dart';
+import '../../models/user_model.dart';
+import '../../models/wallet_model.dart';
 import '../profile/profile_screen.dart';
 import '../remittance/remittance_screen.dart';
 import '../transactions/add_money.dart';
@@ -135,8 +137,6 @@ class _NavItem extends StatelessWidget {
     );
   }
 }
-
-// ─── Home Tab ─────────────────────────────────────────
 class _HomeTab extends StatelessWidget {
   final VoidCallback onRefresh;
   final bool balanceVisible;

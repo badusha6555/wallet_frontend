@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'controllers/auth_conrtroller.dart';       // note: your file has typo 'conrtroller'
+import 'controllers/auth_conrtroller.dart';
 import 'controllers/wallet_provider.dart';
 import 'controllers/profile_controller.dart';
 import 'controllers/remittance_controller.dart';
 import 'core/theme/app_theme.dart';
 import 'screens/auth/login_screen.dart';
-import 'screens/home/home-screen.dart';            // note: your file uses hyphen
+import 'screens/home/home-screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +28,7 @@ class WalletApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => WalletProvider()),
         ChangeNotifierProvider(create: (_) => ProfileProvider()),
-        ChangeNotifierProvider(create: (_) => RemittanceController()),  // ← NEW
+        ChangeNotifierProvider(create: (_) => RemittanceController()),
       ],
       child: MaterialApp(
         title: 'NovaPay',

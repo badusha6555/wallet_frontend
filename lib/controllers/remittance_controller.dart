@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 
 import '../core/api/api_service.dart';
-import '../models/models.dart';
+import '../models/transcation_model.dart';
+import '../models/remittance_result_model.dart';
 
 
 enum RemittanceStatus { idle, loading, loaded, error }
@@ -12,8 +13,6 @@ class RemittanceController extends ChangeNotifier {
   RemittanceStatus _status = RemittanceStatus.idle;
   RemittanceResult? _result;
   String? _error;
-
-  // Last used inputs (so UI can remember them)
   double _lastAmount = 1000;
   String _lastFromCurrency = 'SAR';
   String _lastToCurrency = 'INR';

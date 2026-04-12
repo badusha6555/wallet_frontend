@@ -43,7 +43,6 @@ class _AddMoneyScreenState extends State<AddMoneyScreen> {
   @override
   Widget build(BuildContext context) {
     final wallet = context.watch<WalletProvider>().wallet;
-
     return Scaffold(
       appBar: AppBar(title: const Text('Add Money')),
       body: SingleChildScrollView(
@@ -51,7 +50,6 @@ class _AddMoneyScreenState extends State<AddMoneyScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Current balance
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(24),
@@ -96,8 +94,6 @@ class _AddMoneyScreenState extends State<AddMoneyScreen> {
               prefixIcon: Icons.add_card_rounded,
             ),
             const SizedBox(height: 16),
-
-            // Quick amounts
             GridView.count(
               shrinkWrap: true,
               crossAxisCount: 3,

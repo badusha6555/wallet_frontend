@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../theme/app_theme.dart';
 
-// ─── Gradient Button ──────────────────────────────────
 class GradientButton extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;
@@ -70,7 +69,6 @@ class GradientButton extends StatelessWidget {
   }
 }
 
-// ─── App Text Field ───────────────────────────────────
 class AppTextField extends StatefulWidget {
   final String label;
   final String? hint;
@@ -128,8 +126,6 @@ class _AppTextFieldState extends State<AppTextField> {
     );
   }
 }
-
-// ─── Stat Card ────────────────────────────────────────
 class StatCard extends StatelessWidget {
   final String label;
   final String value;
@@ -182,7 +178,6 @@ class StatCard extends StatelessWidget {
   }
 }
 
-// ─── Error Snackbar ───────────────────────────────────
 void showError(BuildContext context, String msg) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
@@ -219,7 +214,6 @@ void showSuccess(BuildContext context, String msg) {
   );
 }
 
-// ─── Copy Text Widget ─────────────────────────────────
 class CopyableText extends StatelessWidget {
   final String text;
   final TextStyle? style;

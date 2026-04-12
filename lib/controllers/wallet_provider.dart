@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/api/api_service.dart';
-import '../models/models.dart';
+import '../models/transcation_model.dart';
+import '../models/wallet_model.dart';
 
 class WalletProvider extends ChangeNotifier {
   WalletModel? _wallet;

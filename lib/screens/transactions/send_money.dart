@@ -3,8 +3,7 @@ import 'package:provider/provider.dart';
 import '../../controllers/wallet_provider.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/common_widgets.dart';
-
-import '../../models/models.dart';
+import '../../models/wallet_model.dart';
 
 
 class SendMoneyScreen extends StatefulWidget {
@@ -176,7 +175,6 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                 ],
               ),
 
-              // Verified Wallet Card
               if (_verifiedWallet != null) ...[
                 const SizedBox(height: 16),
                 Container(
@@ -241,7 +239,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                 },
               ),
 
-              // Quick Amount Chips
+
               const SizedBox(height: 12),
               Wrap(
                 spacing: 8,

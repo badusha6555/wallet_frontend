@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../core/api/api_service.dart';
 
-import '../models/models.dart';
+import '../models/transcation_model.dart';
+import '../models/user_model.dart';
 
 class ProfileProvider extends ChangeNotifier {
   UserModel? _profile;

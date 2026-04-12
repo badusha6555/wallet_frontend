@@ -3,10 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
-  // Change to your backend IP:
-  // Android emulator  → http://10.0.2.2:8080
-  // iOS simulator     → http://localhost:8080
-  // Physical device   → http://<YOUR_PC_IP>:8080
+
   static const String baseUrl = 'http://10.0.2.2:8080';
 
   static Future<String?> getToken() async {
@@ -32,8 +29,7 @@ class ApiService {
     }
     return headers;
   }
-
-  // ─── AUTH ───────────────────────────────────────────
+//Authentication>>>>>>>>>>
   static Future<Map<String, dynamic>> register({
     required String username,
     required String email,

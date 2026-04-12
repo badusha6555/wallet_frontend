@@ -2,9 +2,10 @@ import 'package:fintech_wallet/controllers/remittance_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
-import '../../models/models.dart';
+import '../../models/remittance_provider_model.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/common_widgets.dart';
+import '../../models/remittance_result_model.dart';
 
 const _currencies = [
   ('SAR', '🇸🇦', 'Saudi Riyal'),
@@ -101,7 +102,6 @@ class _RemittanceScreenState extends State<RemittanceScreen>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Page title when used as tab (no appbar)
                 if (!widget.showAppBar) ...[
                   const Text('Send Abroad',
                       style: TextStyle(
@@ -526,8 +526,6 @@ class _RemittanceScreenState extends State<RemittanceScreen>
     );
   }
 }
-
-// ─── Currency Dropdown ────────────────────────────────
 class _CurrencyDropdown extends StatelessWidget {
   final String label;
   final String value;
@@ -604,7 +602,7 @@ class _CurrencyDropdown extends StatelessWidget {
   }
 }
 
-// ─── Provider Card ────────────────────────────────────
+
 class _ProviderCard extends StatefulWidget {
   final RemittanceProvider provider;
   final int rank;

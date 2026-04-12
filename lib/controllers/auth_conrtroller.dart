@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/api/api_service.dart';
-import '../models/models.dart';
+import '../models/transcation_model.dart';
+import '../models/user_model.dart';
 
 enum AuthStatus { initial, loading, authenticated, unauthenticated, error }
 
@@ -8,7 +9,6 @@ class AuthProvider extends ChangeNotifier {
   AuthStatus _status = AuthStatus.initial;
   String? _error;
   UserModel? _user;
-
   AuthStatus get status => _status;
   String? get error => _error;
   UserModel? get user => _user;

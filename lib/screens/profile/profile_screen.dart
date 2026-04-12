@@ -30,23 +30,23 @@ class ProfileScreen extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         child: Column(
           children: [
-            // Avatar + Name
+
             _buildAvatar(context, profile?.username ?? '?', profile?.email ?? ''),
             const SizedBox(height: 28),
 
-            // Wallet Info Card
+
             _buildWalletCard(wallet),
             const SizedBox(height: 20),
 
-            // Info List
+
             _buildInfoCard(context, profile),
             const SizedBox(height: 20),
 
-            // Settings
+
             _buildSettingsCard(context),
             const SizedBox(height: 20),
 
-            // Logout
+
             SizedBox(
               width: double.infinity,
               child: OutlinedButton.icon(
