@@ -92,24 +92,6 @@ Spring Boot Backend
 Database + External APIs
 ```
 
----
-
-## 🧪 How to Run
-
-### 🔹 Backend (Spring Boot)
-
-```bash
-cd backend
-./mvnw spring-boot:run
-```
-
-### 🔹 Frontend (Flutter)
-
-```bash
-cd fintech_wallet
-flutter pub get
-flutter run
-```
 
 ---
 
@@ -133,16 +115,6 @@ jwt.secret=YOUR_SECRET
 * Advanced analytics dashboard
 
 ---
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to fork and submit a PR.
-
----
-
-## 📜 License
-
-This project is for learning and demonstration purposes.
 
 ---
 
